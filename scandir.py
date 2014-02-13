@@ -389,7 +389,7 @@ elif sys.platform.startswith(('linux', 'darwin')) or 'bsd' in sys.platform:
         scandir_helper = _scandir.scandir_helper
 
         def scandir(path='.'):
-            for name, d_type in scandir_helper(unicode(path)):
+            for name, d_type in scandir_helper(path):
                 yield PosixDirEntry(path, name, d_type)
 
     except ImportError:
